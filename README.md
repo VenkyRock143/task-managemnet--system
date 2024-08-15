@@ -7,7 +7,7 @@ The API provides comprehensive functionality for user authentication, task manag
 ```sh
 ├── .github
 │   ├──workflows
-│   |  └──ci.yml
+│      └──ci.yml
 ├── config
 │   └──database.js
 │
@@ -105,6 +105,7 @@ To run the application in a Docker container, use the following command:
 ```
 
 ## API Documentation
+```sh
 The following API endpoints are available:
 User Registration:
 -POST /api/auth/register
@@ -118,11 +119,12 @@ Update Task:
 -PUT /api/tasks/:taskId
 Delete Task:
 -DELETE /api/tasks/:taskId
-
+```
 ## CI/CD Pipeline
 - This project is configured with a GitHub Actions CI/CD pipeline. The pipeline runs tests and deploys the application automatically on every push to the repository.
 
 ## Approach and Assumptions
+```sh
 Approach
 Modular Architecture:
 The project is designed with a modular architecture, dividing the code into controllers, models, routes, and middleware. This structure enhances maintainability and scalability.
@@ -136,8 +138,10 @@ Comprehensive unit and integration tests are implemented using Jest and Supertes
 Docker is employed to containerize the application, allowing for consistent deployment across different environments. Docker Compose manages the multi-container setup.
 -CI/CD Integration:
 GitHub Actions is configured to automate testing and deployment, ensuring that the code is always in a deployable state.
+```
 
 ## Assumptions
+```sh
 -User Roles:
 The system assumes the existence of two roles: Admin and User. Admins have elevated permissions, such as the ability to delete tasks.
 -Task Statuses:
@@ -146,3 +150,4 @@ The task statuses are predefined as "Todo", "In Progress", and "Done". These are
 Each task is associated with a specific user, implying that only the owner of a task or an admin can modify it.
 -Environment Configuration:
 It is assumed that the PostgreSQL database is configured according to the provided environment variables and that the developer has the necessary access.
+```
